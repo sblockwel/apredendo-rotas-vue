@@ -5,7 +5,12 @@
       <form v-if="carro" @submit.prevent="salvar">
         <input type="number" v-model="carro.id" placeholder="Id" disabled="true"/> <br/>
         <input type="text" v-model="carro.nome" placeholder="Nome"/> <br/>
+        <input type="date" v-model="carro.anoFabricacao" placeholder="Ano Fabricação"/> <br/>
+        <input type="date" v-model="carro.anoModelo" placeholder="Ano Modelo"/> <br/>
+        <input type="number" v-model="carro.preco" placeholder="Preço"/> <br/>
+        <input type="text" v-model="carro.marca.nome" placeholder="Marca"/> <br/>
         <input type="submit" value="Salvar"/>
+
         <button @click.prevent="voltar"> Voltar</button>
       </form>
   </div>
