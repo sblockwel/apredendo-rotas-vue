@@ -43,16 +43,21 @@ export default {
             this.$router.push(`/marca/${marca.id}`)
         },
         deletar(marca) {
-            if(confirm("Deseja apagar esse registro?")){
+            if (confirm("Deseja apagar o registro?")) {
                 axios.delete(`https://carros-app-example.herokuapp.com/marca/${marca.id}`)
-                .then(() => {
-                    alert("Registro apagado!")  
-                })
-                .catch(error => alert(error))
+                    .then(() => {
+                        this.load()
+                        alert("Registro apagado")
+
+                    })
+                    .catch(error => {
+                        console.log(error)
+                        alert(error)
+                    })
             }
         },
         novaMarca() {
-           this.$router.push('/marca/:id') 
+           this.$router.push('/marca/novo') 
         }
     }
 
