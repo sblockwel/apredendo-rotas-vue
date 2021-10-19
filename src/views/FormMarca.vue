@@ -24,14 +24,14 @@ export default {
         if (this.$route.params.id == 'novo') {
             this.marca = {
                 id : null,
-                Nome : null
+                nome : null
             }    
         }
         else{
             axios.get(`https://carros-app-example.herokuapp.com/marca/${this.$route.params.id}`)
-            .then(response => {
-                this.marca = response.data
-            })
+                .then(response => {
+                    this.marca = response.data
+                })
         }
     },
     methods: {
@@ -39,11 +39,19 @@ export default {
             this.$router.go(-1)
         },
         salvar() {
-            axios.post('https://carros-app-example.herokuapp.com/marca/', this.marca)
-            .then(()=> {
-                this.mensagem = "Registro alterado!"  
-            })
-            .catch(error => alert(error))
+            axios.post('https://carros-app-example.herokuapp.com/marca', 
+                    this.marca)
+                    .then((response) => {
+                        if (this.marca.id == null) {
+                            this.mensagem = "Registro adicionado " + response.data
+                            this.marca.id = response.data
+                        }
+                        else
+                            this.mensagem = "Registro alterado " + response.data
+                    })
+                    .catch(error => 
+                        alert(error)
+                    )
         }
     }
 
