@@ -2,11 +2,25 @@
   <div>
       <h1>Form marca</h1>
       {{mensagem}}
-      <form v-if="marca" @submit.prevent="salvar">
-        <input type="number" v-model="marca.id" placeholder="Id" disabled="true"/> <br/>
-        <input type="text" v-model="marca.nome" placeholder="Nome"/> <br/>
-        <input type="submit" value="Salvar"/>
-        <button @click.prevent="voltar"> Voltar</button>
+      <form id="formulario" v-if="marca" @submit.prevent="salvar">
+
+          <div class="campo">
+            <label>Id:</label> <br/>
+            <input type="number" v-model="marca.id" placeholder="Id" disabled="true"/> <br/>
+        </div>
+       
+        <div class="campo">
+            <label>Nome:</label> <br/>
+            <input type="text" v-model="marca.nome" placeholder="Nome"/> <br/>
+        </div>
+        
+        <div class="campo"> 
+            <input type="submit" value="Salvar"/>
+        </div> 
+
+        <div class="campo"> 
+            <button id="botao" @click.prevent="voltar"> Voltar</button>
+        </div>
       </form>
   </div>
 </template>
@@ -59,5 +73,28 @@ export default {
 </script>
 
 <style>
+#formulario {
+  width: 60%; 
+  margin-left: 20%;
+  padding: 45px 15px;
+  height: 100px;
+}
 
+.campo {
+  width: 40%;
+  float: left;
+}
+
+.campo input {
+  margin: 10px 1%;
+  padding: 8px 1%;
+  width: 90%;
+}
+
+#botao {
+    width: 90%;
+    height: 35px;    
+    padding: 8px 1%;
+    margin: 10px 1%;
+}
 </style>

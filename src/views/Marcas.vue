@@ -3,11 +3,11 @@
       <h1>Marcas</h1>
       <button @click="novaMarca()">Nova Marca</button>
       <table>
-          <th>
-              <td>Id</td>
-              <td>Nome</td>
-              <td></td>
-          </th>
+          
+              <th>Id</th>
+              <th>Nome</th>
+              <th></th>
+          
           <tr v-for="m in marcas" :key="m.id">
               <td>{{m.id}}</td>
               <td>{{m.nome}}</td>
@@ -67,4 +67,33 @@ export default {
 
 <style>
 
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{
+  background-color:#d4d4d4
+
+}
+
+.tabela {
+  margin: auto;
+}
+
+#botao {
+    width: 20%;
+    height: 50px;
+    margin-top: 17px;
+}
+
+button:hover{
+  cursor: pointer;
+}
 </style>

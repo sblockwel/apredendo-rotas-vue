@@ -5,7 +5,7 @@
       <form id="formulario" v-if="carro" @submit.prevent="salvar">
 
         <div class="campo">
-            <label>ID:</label> <br/>
+            <label>Id:</label> <br/>
             <input type="number" v-model="carro.id" placeholder="Id" disabled="true"/> <br/>
         </div>
        
@@ -145,10 +145,16 @@ export default {
 
 #botao {
     width: 90%;
-    height: 50px;    
+    height: 35px;    
     padding: 8px 1%;
-  margin: 10px 1%;
+    margin: 10px 1%;
 }
 
+select{
+    width: 92%;
+    height: 40px;
+    padding: 8px 1%;    
+    margin: 10px 1%;
+}
 
 </style>

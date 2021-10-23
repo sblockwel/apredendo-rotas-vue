@@ -3,15 +3,15 @@
       <h1>Carros</h1>
       <button @click="novoCarro()">Nova Carro</button>
       <table>
-          <th>
-              <td>Id</td>
-              <td>Nome</td>
-              <td>Ano Fabricacao</td>
-              <td>Ano Modelo</td>
-              <td>Preço</td>
-              <td>Marca</td>
-              <td>Cor</td>
-          </th>
+          
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Ano Fabricacao</th>
+        <th>Ano Modelo</th>
+        <th>Preço</th>
+        <th>Marca</th>
+        <th>Cor</th>
+         
           <tr v-for="c in carros" :key="c.id">
               <td>{{c.id}}</td>
               <td>{{c.nome}}</td>
