@@ -10,6 +10,7 @@
               <td>Ano Modelo</td>
               <td>Preço</td>
               <td>Marca</td>
+              <td>Cor</td>
           </th>
           <tr v-for="c in carros" :key="c.id">
               <td>{{c.id}}</td>
@@ -17,7 +18,10 @@
               <td>{{c.anoFabricacao}}</td>
               <td>{{c.anoModelo}}</td>
               <td>{{c.preco}}</td>
-              <td>{{c.marca.nome}}</td>
+              
+              <td> <span v-if="c.marca">{{c.marca.nome}}</span></td>
+              <td> <span v-if="c.cor">{{c.cor.nome}}</span></td>
+              
               <td>
                   <a href="#" @click="editar(c)">Editar |</a>
                   <a href="#" @click="deletar(c)"> Deletar</a>
@@ -70,5 +74,34 @@ export default {
 </script>
 
 <style>
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{
+  background-color:#d4d4d4
+
+}
+
+.tabela {
+  margin: auto;
+}
+
+#botao {
+    width: 20%;
+    height: 50px;
+    margin-top: 17px;
+}
+
+button:hover{
+  cursor: pointer;
+}
 
 </style>
